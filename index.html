@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>DigiSikho.in – Digital Literacy for All Indians</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0066cc">
+</head>
+<body>
+    <header>
+        <h1>📱 DigiSikho.in</h1>
+        <p>सुरक्षित इंटरनेट | Safe Internet for Every Indian</p>
+        <div class="lang-selector">
+            <label for="lang-select">Choose your language / अपनी भाषा चुनें:</label>
+            <select id="lang-select">
+                <option value="en">English</option>
+                <option value="as">অসমীয়া (Assamese)</option>
+                <option value="bn">বাংলা (Bengali)</option>
+                <option value="brx">बर' (Bodo)</option>
+                <option value="doi">डोगरी (Dogri)</option>
+                <option value="gu">ગુજરાતી (Gujarati)</option>
+                <option value="hi">हिन्दी (Hindi)</option>
+                <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                <option value="ks">कॉशुर (Kashmiri)</option>
+                <option value="kok">कोंकणी (Konkani)</option>
+                <option value="mai">मैथिली (Maithili)</option>
+                <option value="ml">മലയാളം (Malayalam)</option>
+                <option value="mni">মৈতৈলোন্ (Manipuri)</option>
+                <option value="mr">मराठी (Marathi)</option>
+                <option value="ne">नेपाली (Nepali)</option>
+                <option value="or">ଓଡ଼ିଆ (Odia)</option>
+                <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                <option value="sa">संस्कृतम् (Sanskrit)</option>
+                <option value="sat">ᱥᱟᱱᱛᱟᱲᱤ (Santali)</option>
+                <option value="sd">سنڌي (Sindhi)</option>
+                <option value="ta">தமிழ் (Tamil)</option>
+                <option value="te">తెలుగు (Telugu)</option>
+                <option value="ur">اردو (Urdu)</option>
+            </select>
+        </div>
+    </header>
+
+    <nav>
+        <button class="topic-btn" data-topic="email">Safe Email</button>
+        <button class="topic-btn" data-topic="search">Smart Search</button>
+        <button class="topic-btn" data-topic="scam">Spot Scams</button>
+        <button class="topic-btn" data-topic="privacy">Privacy Basics</button>
+        <button class="topic-btn" data-topic="password">Strong Passwords</button>
+        <button class="topic-btn" data-topic="fakenews">Fake News</button>
+        <button class="topic-btn" data-topic="payments">Safe UPI/Payments</button>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-label">Your learning progress</div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+
+    <main id="content">
+        <div class="card">
+            <h2>Welcome to DigiSikho!</h2>
+            <p>Select a topic above to start learning. Available in 24 Indian languages + English.</p>
+            <p>Use the "Read Aloud" button to listen. Toggle dark mode or high contrast for comfort.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made by Chandrahaas for Digital India | Still working on it to get better every day! | Translated the content into different languages with Microsoft Translator |
+            <button id="tts-btn"> Read Aloud</button></p>
+    </footer>
+
+    <button id="darkmode-toggle" aria-label="Dark mode">🌓 Dark/Light</button>
+    <button id="contrast-btn" aria-label="High contrast">⚡ High Contrast</button>
+    <button id="back-to-top" aria-label="Back to top">⬆ Top</button>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(e => console.log("SW error", e));
+        }
+    </script>
+</body>
+</html>

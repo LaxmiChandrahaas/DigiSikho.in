@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Noto Sans', system-ui, -apple-system, sans-serif;
+    background: #f4f7fc;
+    color: #1e2a3e;
+    line-height: 1.6;
+    padding: 20px;
+    transition: background 0.2s, color 0.2s;
+}
+
+header {
+    text-align: center;
+    background: #0066cc;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 28px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.lang-selector {
+    margin-top: 15px;
+}
+
+.lang-selector select {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 40px;
+    border: none;
+    background: white;
+    color: #0066cc;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.topic-btn {
+    background: white;
+    border: 2px solid #0066cc;
+    padding: 10px 20px;
+    border-radius: 60px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.topic-btn:hover {
+    background: #0066cc;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.completed {
+    border-left: 8px solid #00cc66;
+    background: #e8f5e9;
+}
+
+.progress-container {
+    max-width: 900px;
+    margin: 0 auto 1rem auto;
+    background: white;
+    border-radius: 40px;
+    padding: 12px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.progress-label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 20px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 12px;
+    background: #00cc66;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+}
+
+.card h2 {
+    color: #0066cc;
+    margin-bottom: 1rem;
+}
+
+.card ul, .card p {
+    margin-bottom: 1rem;
+}
+
+.card li {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.quiz-question {
+    background: #eef2f5;
+    padding: 1.2rem;
+    border-radius: 20px;
+    margin-top: 1.5rem;
+}
+
+.quiz-question p {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.quiz-opt {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 40px;
+    margin: 5px 8px 5px 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.1s;
+}
+
+.quiz-opt:hover {
+    background: #004c99;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    padding: 1rem;
+}
+
+#tts-btn, #darkmode-toggle, #contrast-btn, #back-to-top {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.1s;
+}
+
+#darkmode-toggle, #contrast-btn, #back-to-top {
+    position: fixed;
+    z-index: 1000;
+}
+
+#darkmode-toggle {
+    bottom: 20px;
+    right: 20px;
+}
+
+#contrast-btn {
+    bottom: 80px;
+    right: 20px;
+}
+
+#back-to-top {
+    bottom: 20px;
+    left: 20px;
+    display: none;
+}
+
+body.dark {
+    background: #121826;
+    color: #e4e6eb;
+}
+
+body.dark .card {
+    background: #1e2a3a;
+    color: #e4e6eb;
+}
+
+body.dark .topic-btn {
+    background: #2d3e50;
+    border-color: #4a9eff;
+    color: white;
+}
+
+body.dark .topic-btn:hover {
+    background: #4a9eff;
+}
+
+body.dark .quiz-question {
+    background: #2a3b4c;
+}
+
+body.dark .progress-container {
+    background: #1e2a3a;
+}
+
+body.high-contrast {
+    background: black;
+    color: yellow;
+}
+
+body.high-contrast .card {
+    background: #111;
+    border: 2px solid yellow;
+}
+
+body.high-contrast button {
+    background: black;
+    color: yellow;
+    border: 2px solid yellow;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+    .topic-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    .card {
+        padding: 1.2rem;
+    }
+    .quiz-opt {
+        display: block;
+        width: 100%;
+        margin: 6px 0;
+    }
+}
